@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+ 
+  <style>
+    .img-container {
+      width: 400px;
+      padding: 1px;
+      margin-bottom: 20px;
+    }
+ 
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .show {
+      display: "";
+    }
+ 
+    .hide {
+      display: none;
+    }
+    .btn{
+       background-color: yellow;
+    }
+  </style>
+ 
+  <body>
+    <div class="img-container" id="img">
+      <img
+        id="image"
+        src="https://th.bing.com/th/id/OIP.7cRYFyLoDEDh4sRtM73vvwHaDg?w=291&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        alt="image"
+      />
+    </div>
+ 
+    <button type="button" onclick="onChange()" class="btn">Hide</button>
+    <!-- <button type="button" onclick="onShow()">show</button> -->
+ 
+    <script>
+ 
+ 
+      function onChange() {
+        var c =document.querySelector(".img-container").classList;
+        console.log(c);
+        c.toggle("hide")
+         
+        if (c.contains("hide")) {
+         var btn= document.querySelector("button").innerText = "Show";
+            document.getElementsByTagName("button")[0].style.background="red"
+            
+        } else {
+          document.querySelector("button").innerText = "Hide";
+          document.getElementsByTagName("button")[0].style.background="yellow"
+        } 
+      }
+    //   function onShow(){
+    //     document.querySelector(".img-container").style.display=""
+    //   }
+ 
+ 
+ 
+    </script>
+  </body>
+</html>

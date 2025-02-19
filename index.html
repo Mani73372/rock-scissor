@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        /* height: 90vh; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .card {
+        display: flex;
+        gap: 20px;
+        text-align: center;
+      }
+      .img-container {
+        width: 125px;
+        height: 200px;
+        padding: 7px;
+      }
+      .img-container input[type="radio"] {
+        display: none;
+      }
+      .img-container label {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+
+      label.paper {
+        background-image: url("images/paper.png");
+      }
+
+      label.rock {
+        background-image: url("images/rock.png");
+      }
+      label.scissor {
+        background-image: url("images/scissor.png");
+      }
+
+      .result-img {
+        text-align: center;
+        width: 100px;
+      }
+
+      .result-img img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .img-container input[type="radio"]:checked + label {
+        border: 2px solid #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div class="card">
+        <div class="img-container">
+          <input type="radio" name="user-input" id="rock" value="1" />
+          <label for="rock" class="rock"></label>
+          <span>Rock</span>
+        </div>
+        <div class="img-container">
+          <input type="radio" name="user-input" id="paper" value="2" />
+          <label for="paper" class="paper"></label>
+          <span>Paper</span>
+        </div>
+        <div class="img-container">
+          <input type="radio" name="user-input" id="scissor" value="3" />
+          <label for="scissor" class="scissor"></label>
+          <span>Scissor</span>
+        </div>
+      </div>
+      <h4>Select an option</h4>
+
+      <div
+        style="
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <div class="result-img">
+          <img src="" id="player" />
+          <span>You</span>
+        </div>
+        <h2>Vs</h2>
+        <div class="result-img">
+          <img src="" id="computer" />
+          <span>Computer</span>
+        </div>
+      </div>
+
+      <button onclick="play()" type="button">play</button>
+
+      <h1>Computer Win!</h1>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

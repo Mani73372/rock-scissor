@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+ 
+  <style></style>
+ 
+  <body>
+    <span>100</span>
+    <input type="range" min="100" max="500" value="100" onchange="change()" />
+    <span>500</span>
+ 
+    <h1 >300</h1>
+ 
+    <script>
+      function change() {
+        var c =document.getElementsByTagName("input")[0].value;
+        console.log(c);   
+            document.getElementsByTagName("h1")[0].innerHTML=c
+      }
+    </script>
+  </body>
+</html>

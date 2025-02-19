@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    .img-container {
+      width: 400px;
+      height: 300px;
+      border: 2px solid black;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+
+  <body>
+    <input
+      id="img-url"
+      type="text"
+      style="margin-bottom: 20px"
+      placeholder="enter-image-url"
+      onchange="change()"
+    />
+
+    <div class="img-container">
+      <img src="" alt="image" id="f" />
+    </div>
+
+    <script>
+      function change() {
+        var c = document.getElementById("img-url").value;
+        console.log(c);
+
+        const img = new Image();
+        img.src = c;
+
+
+        img.onload = function () {
+          document.getElementById("f").setAttribute("src", c);
+        };
+        img.onerror=function () {
+            alert("Error")
+        }
+        
+      }
+    </script>
+  </body>
+</html>

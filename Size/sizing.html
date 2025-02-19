@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style></style>
+  <body>
+    <div class="div-tag" style="font-size: 16px" id="font">Div1</div>
+
+    <button type="button" onclick="Increase()">Increase</button>
+    <button type="button" onclick="Decrease()">Decrease</button>
+    <button type="button" onclick="Reset()">Reset</button>
+
+    <script>
+      function Increase() {
+            const div= document.getElementById("font");
+            const style= div.style.fontSize.split("p")[0];
+            const value = Number(style);
+            div.style.fontSize=(value+10)+"px"; 
+      }
+      function Decrease() {
+            const div= document.getElementById("font");
+            const style= div.style.fontSize.split("p")[0];
+            const value = Number(style);
+            div.style.fontSize=(value-10)+"px"; 
+      }
+      
+      function Reset(){
+        const div= document.getElementById("font");
+            div.style.fontSize=(16)+"px"; 
+      }
+
+    </script>
+  </body>
+</html>
